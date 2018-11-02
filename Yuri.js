@@ -86,10 +86,6 @@ client.on('message', function(message) {
 	
 	});
 client.on('message', msg => {
-	if (!msg.content.startsWith(PREFIX + 'hug')) return;
-		msg.reply('Oh uh ok! *hugs*');
-});
-client.on('message', msg => {
 	if (msg.content === 'Hey yuri do you like knifes?') {
 		msg.reply('~~**YES**~~ oh I mean. Yes I do. But I like you more!~');
 	}
@@ -173,5 +169,19 @@ client.on('message', msg => {
 			return
 			}
 		}}
+	});
+	client.on('message', msg => {
+		if (msg.content === 'U') {
+			msg.channel.send('You* ' + msg.author.username)
+		}
+	});
+	client.on('message', msg => {
+		if (!msg.content.startsWith(PREFIX + 'hug')) return;
+		msg.reply("oh ok 'hugs' I love you " + msg.author.username)
+	});
+	client.on('message', msg => {
+		if (msg.content === 'u') {
+			msg.channel.send('You* ' + msg.author.username)
+		}
 	});
 client.login(process.env.BOT_TOKEN);
