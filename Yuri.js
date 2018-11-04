@@ -184,4 +184,9 @@ client.on('message', msg => {
 			msg.channel.send('You* ' + msg.author.username)
 		}
 	});
+	client.on('message', msg => {
+	if (msg.content === '<@409069320480620554>') {
+		msg.channel.send('Yes, What do you need ' + msg.author.username + '?')
+	}
+});
 client.login(process.env.BOT_TOKEN);
