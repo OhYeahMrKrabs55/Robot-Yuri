@@ -46,6 +46,7 @@ client.on('message', msg => {
 		.addField ('Y!poems', 'I will say one of my poems')
 		.addField ('Y!botinfo', 'Not exactly finished just yet')
 		.addField ('Y!restart', 'am I glitching out/not working properly? use this to reset me! **NOTE** *Only the owner of this bot can use this command!*')
+		.addField ('Y!updatelog', 'You can find my latest updates using this command!')
 		.setFooter(' Requested by ' + msg.author.username + ' Created by ' + creator )
 		.setColor(0xEE82EE)
 		msg.channel.sendEmbed(embed2);
@@ -188,5 +189,14 @@ client.on('message', msg => {
 	if (msg.content === '<@409069320480620554>') {
 		msg.channel.send('Yes, What do you need ' + msg.author.username + '?')
 	}
+});
+client.on('message', msg => {
+	if (!msg.content.startsWith(PREFIX + 'updatelog')) return;
+	var embed3 = new Discord.RichEmbed()
+	.addField ('This is a new command currently being tested, If it works out updates to this bot can be found by using this command!')
+	.setFooter(' Requested by ' + msg.author.username + ' Created by ' + creator )
+		.setColor(0xEE82EE)
+	.setColor(0xEE82EE)
+	msg.channel.sendEmbed(embed3);
 });
 client.login(process.env.BOT_TOKEN);
